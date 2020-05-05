@@ -25,7 +25,17 @@ Route::get('/contact', function () {
 Route::get('/register', function () {
     return view('register');
 });
+Route::get('/board', "BoardController@mostrar")->middleware('autorizacion');
+Route::get('/logout', "SessionController@logout")->middleware('autorizacion');
+Route::get('/verDetallesPost/{id}', "PostController@show")->middleware('autorizacion');
+Route::get('/deletePostForm/{id}', "PostController@showDeleteConfirm")->middleware('autorizacion');
+Route::get('/editPostForm/{id}', "PostController@editForm")->middleware('autorizacion');
 
 // POST
 
 Route::post('/register', "RegisterController@registrar");
+Route::post('/login', "SessionController@login");
+Route::post('/addPost', "BoardController@addPost")->middleware('autorizacion');
+Route::post('/agregarComentario', "PostController@addComment")->middleware('autorizacion');
+Route::post('/deletePost', "PostController@delete")->middleware('autorizacion');
+Route::post('/editPost', "PostController@edit")->middleware('autorizacion');

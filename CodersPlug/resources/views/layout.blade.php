@@ -35,6 +35,7 @@
                     <button type="button" class="btn btn-secondary dropdown-toggle fuente" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">¿Ya tenes cuenta? <p>inicia sesion</p></button>
                     <div class="dropdown-menu fuente">
                         <form class="px-4 py-3" action="/login" method="POST">
+                            {{csrf_field()}}
                             <div class="form-group">
                                 <input type="email" class="form-control" name="login_email" id="login_email" placeholder="Ingresa tu email" required>
                             </div>

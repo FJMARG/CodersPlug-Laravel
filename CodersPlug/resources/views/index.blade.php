@@ -2,6 +2,11 @@
 @section("titulo")
   <title>CodersPlug - Inicio</title>
 @endsection
+@isset($msj)
+	<div class="alert alert-danger">
+		<p>{{$msj}}</p>
+	</div>
+@endisset
 @section("cuerpo")
 <div class="container">
         <?php if (isset($args["msj"])): ?>

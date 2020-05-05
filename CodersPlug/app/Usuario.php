@@ -12,7 +12,7 @@ class Usuario extends Model
     public $guarded = [];         // Especificar los atributos protegidos en un array.
 
     public function rol(){
-        return $this->hasOne('App\Rol');
+        return $this->belongsTo('App\Rol');
     }
     public function perfil(){
         return $this->belongsTo('App\Perfil');
