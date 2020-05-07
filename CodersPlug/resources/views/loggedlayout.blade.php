@@ -112,6 +112,15 @@
 					</div>
 				</div>
 			</div>
+			@if(count($errors)>0)
+                <div class="alert alert-danger"> 
+                  <ul>
+				  	@foreach ($errors->all() as $error)
+						<li>{{ $error }}</li>
+					@endforeach
+				  </ul>
+				</div>
+			@endif
 			@yield ('body')
 		</div>
 		<div class="colizq col-4 d-none d-lg-block">

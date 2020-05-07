@@ -14,6 +14,7 @@ class BoardController extends Controller
     }
 
     public function addPost(Request $r){
+        app(ValidationController::class)->validarPost($r);
         $loggedUser = app(SessionController::class) -> getLoggedUser($r);
         $post = new Post();
         $post -> titulo = $r['titulo'];
