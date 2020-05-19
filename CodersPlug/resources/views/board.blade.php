@@ -11,11 +11,11 @@
 		<div class="col-12">
 			<div class="form-group">
 				<br>
-				<form action="/addPost" method="POST">
+				<form action="/addPost" method="POST" onsubmit="return validar()">
 					{{csrf_field()}}
 					<label for="titulo"><h4>Titulo:</h4></label>
 					<input type="text" id="titulo" name="titulo" class="form-control comentarios margin2">
-					<textarea class="form-control comentarios margin2" name="post" placeholder="Escribi tu comentario"></textarea>
+					<textarea id="texto" class="form-control comentarios margin2" name="post" placeholder="Escribi tu comentario"></textarea>
 					<input type="submit" class="btn btn-warning" value="POSTEAR">
 				</form>
 			</div>
@@ -48,4 +48,5 @@
 <div class="d-block d-sm-block d-md-none">
 	<a href="/board"><img class="menuflotante" src="/assets/img/menu.png"></a>
 </div>
+<script src="/js/validar_post.js"></script>
 @endsection

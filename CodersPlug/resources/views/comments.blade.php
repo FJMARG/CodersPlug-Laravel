@@ -51,15 +51,16 @@
 				</div>
 			</div>
 			@endforeach
-			<form action="/agregarComentario" method="post">
+			<form action="/agregarComentario" method="post" onsubmit="return validar()">
 				{{csrf_field()}}
 				<input type="hidden" name="idpost" value="{{ $post -> id }}">
 				<div class="form-group">
-					<textarea name="comentario" class="form-control comentarios" placeholder="Escribi tu comentario"></textarea>
+					<textarea id="texto" name="comentario" class="form-control comentarios" placeholder="Escribi tu comentario"></textarea>
 				</div>
 				<input type="submit" class="btn btn-warning" value="Comentar">
 			</form>
 		</div>
 	</div>
 </div>
+<script src="/js/validar_comments.js"></script>
 @endsection

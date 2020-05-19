@@ -50,10 +50,13 @@
 								<a class="nav-link blanco" href="#">Courses</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link blanco" href="/userconfig">Cambiar configuracion</a>
+								<a class="nav-link blanco" href="/userconfig">Change data</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link blanco" href="/friends">Friends</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link blanco" href="/logout">Logout</a>
 							</li>
 						</ul>
 
@@ -113,7 +116,7 @@
 				</div>
 			</div>
 			@if(count($errors)>0)
-                <div class="alert alert-danger"> 
+                <div class="alert alert-danger">
                   <ul>
 				  	@foreach ($errors->all() as $error)
 						<li>{{ $error }}</li>
@@ -139,8 +142,8 @@
 						<a class="nav-link blanco" href="#"><span class="verde">R</span>ecluiters</a>
 						<a class="nav-link blanco" href="#"><span class="verde">C</span>ourses</a>
 						<a class="nav-link blanco" href="/friends"><span class="verde">I</span>nterest</a>
-						<a class="nav-link blanco" href="/userconfig"><span class="verde">C</span>ambiar datos</a>
-						<a class="nav-link blanco" href="/logout"><span class="verde">S</span>alir</a>
+						<a class="nav-link blanco" href="/userconfig"><span class="verde">C</span>hange data</a>
+						<a class="nav-link blanco" href="/logout"><span class="verde">L</span>ogout</a>
 					</div>
 				</nav>
 			</div>

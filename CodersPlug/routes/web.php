@@ -33,6 +33,7 @@ Route::get('/editPostForm/{id}', "PostController@editForm")->middleware('autoriz
 
 // POST
 
+Route::post('/contact', "ContactController@create");
 Route::post('/register', "RegisterController@registrar");
 Route::post('/login', "SessionController@login");
 Route::post('/addPost', "BoardController@addPost")->middleware('autorizacion');

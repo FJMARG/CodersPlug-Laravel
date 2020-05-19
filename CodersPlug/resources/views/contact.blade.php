@@ -7,14 +7,29 @@
         <div class="row">
           <div class="col-lg-5 col-sm-12 centro">
             <div class="row">
+              @if(count($errors)>0)
+                  <div class="alert alert-danger">
+                    <ul>
+  				  	@foreach ($errors->all() as $error)
+  						<li>{{ $error }}</li>
+  					@endforeach
+  				  </ul>
+  				</div>
+  			@endif
+  			@isset($msj)
+  				<div class="alert alert-success">
+  					<p>{{$msj}}</p>
+  				</div>
+  			@endisset
             <div class="col-12 text-center">
               <h2 class="blanco"><span class="verde">C</span>ontact Us</h2>
             </div>
             <div class="cards">
               <article class="card-body">
-                <form method="post" action="">
+                <form method="post" action="/contact" onsubmit="return validar()">
+                    {{csrf_field()}}
                   <div class="form-row">
-                    <div class="col form-group">  
+                    <div class="col form-group">
                       <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre">
                     </div> <!-- form-group -->
                     <div class="col form-group">
@@ -25,18 +40,18 @@
                     <input type="email"name="email" id="email" class="form-control" placeholder="Correo electronico">
                   </div> <!-- form-group -->
                   <div class="form-group">
-                  </div> <!-- form-group -->                 
+                  </div> <!-- form-group -->
                   <div class="form-group">
-                    <textarea placeholder="Dejanos tu comentario/sugerencia" class="form-control" aria-label="With textarea"></textarea>
+                    <textarea id="texto" placeholder="Dejanos tu comentario/sugerencia" class="form-control" aria-label="With textarea"></textarea>
                   </div>
                   <div class="form-group">
                     <button type="submit" class="btn btn-primary btn-block"> Enviar  </button>
                   </div> <!-- form-group -->    <button type="button" class="btn  btn-lg btn-block goo">Gmail</button>
                   <button type="button" class="btn  btn-lg btn-block faa">Facebook</button>
-                  <button type="button" class="btn  btn-lg btn-block tw">Twitter</button>                                            
+                  <button type="button" class="btn  btn-lg btn-block tw">Twitter</button>
                 </form>
               </article> <!-- card-body -->
-            </div> <!-- card -->  
+            </div> <!-- card -->
     </div> <!-- row -->
         </div>
         <div class="col-lg-7 col-sm-12 centroz mapa">
@@ -63,9 +78,10 @@
                     <p class="data" >Calle Falsa 123</p>
                   </article>
                 </section>
-            </div> 
+            </div>
             </div>
             <div>
         </div>
   </div>
+  <script src="/js/validar_contacto.js"></script>
 @endsection

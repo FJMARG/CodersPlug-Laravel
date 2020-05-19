@@ -11,12 +11,12 @@
 		<div class="col-12">
 			<div class="form-group">
 				<br> @if($post -> usuario_id == $usuario -> id)
-				<form action="/editPost" method="POST">
+				<form action="/editPost" method="POST" onsubmit="return validar()">
 					{{csrf_field()}}
 					<input type="hidden" name="id" value="{{ $post -> id }}">
 					<label for="titulo"><h4>Titulo:</h4></label>
 					<input type="text" id="titulo" name="titulo" value="{{ $post -> titulo }}" class="form-control comentarios margin2">
-					<textarea class="form-control comentarios margin2" name="texto" placeholder="Escribi tu post">{{ $post -> texto }}</textarea>
+					<textarea id="texto" class="form-control comentarios margin2" name="texto" placeholder="Escribi tu post">{{ $post -> texto }}</textarea>
 					<input type="submit" class="btn btn-warning" value="EDITAR">
 				</form>
 				<a href="/verDetallesPost/{{ $post -> id }}"><h4>Volver</h4></a>
@@ -26,4 +26,5 @@
 		</div>
 	</div>
 </div>
+<script src="/js/validar_post.js"></script>
 @endsection
