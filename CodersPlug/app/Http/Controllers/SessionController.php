@@ -12,7 +12,7 @@ class SessionController extends Controller
         $msj="";
         $dbuser=Usuario::where('email','=',$r['login_email'])->first();
         try {	/* 	Excepcion en caso de que existan datos erroneos */
-            if ((empty ($dbuser)) || !($this -> verifyPassword ($dbuser,$r['password']))){
+            if ((empty ($dbuser)) || !($this -> verifyPassword ($dbuser,$r['login_password']))){
                 throw new Exception ('Email o contraseña incorrectos.',1);
             }
         }

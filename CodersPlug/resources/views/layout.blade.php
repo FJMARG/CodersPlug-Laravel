@@ -40,7 +40,7 @@
                                 <input type="email" class="form-control" name="login_email" id="login_email" placeholder="Ingresa tu email" required>
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" name="password" id="password" placeholder="Ingresa tu password" required>
+                                <input type="password" class="form-control" name="login_password" id="login_password" placeholder="Ingresa tu password" required>
                             </div>
                             <div class="form-group">
                                 <div class="form-check">

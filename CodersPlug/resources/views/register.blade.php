@@ -26,7 +26,7 @@
             </div>
             <div class="cards">
               <article class="card-body">
-                <form method="post" action="/register" enctype="multipart/form-data">
+                <form method="post" action="/register" enctype="multipart/form-data" onsubmit="return validar()">
                   {{csrf_field()}}
                   <div class="form-group">
                     <div class="input-group mb-3">
@@ -84,7 +84,7 @@
                     </label>
                   </div> <!-- form-group -->
                   <div class="form-group">
-                    <input class="form-control" name="password" type="password" placeholder="Contraseña">
+                    <input class="form-control" id="password" name="password" type="password" placeholder="Contraseña">
                   </div> <!-- form-group -->
                   <div class="form-group">
                     <button type="submit" name="submit" class="btn btn-primary btn-block">Registrarse</button>
@@ -99,4 +99,5 @@
   			</div>
   	  	</div>
   </div>
+  <script src="/js/validar_registro.js"></script>
 @endsection
